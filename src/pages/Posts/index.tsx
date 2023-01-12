@@ -1,10 +1,16 @@
+import { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Profile } from "../../components/Profile";
+import { PostsContext } from "../../contexts/PostsContext";
 import { PostCard } from "./components/PostCard";
 import { SearchForm } from "./components/SearchForm";
 import { PostsContainer } from "./styles";
+import ClipLoader from "react-spinners/ClipLoader"
 
 export function Posts() {
+
+  const { posts, isQueryingPosts } = useContext(PostsContext)
+
   return (
     <div>
       <Header />
@@ -13,9 +19,27 @@ export function Posts() {
         <SearchForm />
 
         <main>
-          <PostCard text="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have.
-        These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."/>
-          <PostCard text="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have." />
+          {isQueryingPosts ? (
+            <ClipLoader
+              color="#fff"
+              loading={isQueryingPosts}
+              size={25}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          ) : (
+            posts.map(post => {
+              return (
+                <PostCard
+                  key={post.number}
+                  text={post.body}
+                  postTitle={post.title}
+                  postDate={post.created_at}
+                  postNumber={post.number}
+                />
+              )
+            })
+          )}
         </main>
       </PostsContainer>
     </div>

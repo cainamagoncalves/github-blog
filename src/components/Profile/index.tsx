@@ -1,12 +1,13 @@
 import { ProfileContainer, ProfileContent, ProfileImage } from "./styles";
-import logo from '../../assets/images/logo.svg'
 import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 import { FaBuilding, FaExternalLinkAlt, FaGithub, FaUserFriends } from "react-icons/fa";
+import { InfoCardIcon } from "../InfoCardIcon";
 
 interface GithubUserProps {
   avatar_url: string;
   followers: number;
+  bio: string;
   login: string;
   company: string;
   name: string;
@@ -21,7 +22,6 @@ export function Profile() {
     const { data } = await api.get(`/users/cainamagoncalves`)
 
     setGithubUser(data)
-    console.log(data)
   }
 
   useEffect(() => {
@@ -40,22 +40,12 @@ export function Profile() {
           </a>
         </header>
         <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas.
-          Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+          {githubUser.bio}
         </p>
         <footer>
-          <span>
-            <FaGithub />
-            {githubUser.login}
-          </span>
-          <span>
-            <FaBuilding />
-            {githubUser.company}
-          </span>
-          <span>
-            <FaUserFriends />
-            {githubUser.followers} seguidores
-          </span>
+          <InfoCardIcon icon={<FaGithub size={18} />} description={githubUser.login} />
+          <InfoCardIcon icon={<FaBuilding size={18} />} description={githubUser.company} />
+          <InfoCardIcon icon={<FaUserFriends size={18} />} description={String(githubUser.followers) + ' seguidores'} />
         </footer>
       </ProfileContent>
     </ProfileContainer>
