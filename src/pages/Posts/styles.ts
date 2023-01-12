@@ -11,6 +11,7 @@ export const PostsContainer = styled.main`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    padding-bottom: 2rem;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(1, 1fr)

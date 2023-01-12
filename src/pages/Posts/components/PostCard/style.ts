@@ -7,9 +7,9 @@ export const PostCardContainer = styled(NavLink)`
 
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  
   gap: 1.25rem;
+
+  padding: 2rem;
   border-radius: 6px;
   background: ${props => props.theme["base-post"]};
 

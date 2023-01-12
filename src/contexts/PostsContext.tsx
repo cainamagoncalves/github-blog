@@ -72,7 +72,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
     setIsQueryingPosts(true)
 
     try {
-      const { data } = await api.get<QueryData>(`/search/issues?q=${query ? query : ""}%20repo:cainamagoncalves/github-blog`)
+      const { data } = await api.get<QueryData>(`/search/issues?q=${query ? query : ""}%20type:issue%20repo:cainamagoncalves/github-blog`)
 
       const { items } = data
 
