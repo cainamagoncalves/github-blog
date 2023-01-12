@@ -9,12 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-progress": "^1.0.1",
     "@types/styled-components": "^5.1.26",
     "axios": "^1.2.2",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.5",
     "react-icons": "^4.7.1",
-    "styled-components": "^5.3.6"
+    "react-markdown": "^8.0.4",
+    "react-router-dom": "^6.6.1",
+    "react-spinners": "^0.13.7",
+    "remark-gfm": "^3.0.1",
+    "styled-components": "^5.3.6",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

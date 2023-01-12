@@ -1,6 +1,10 @@
+import ReactMarkdown from "react-markdown";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled(NavLink)`
+  text-decoration: none;
+
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -9,14 +13,7 @@ export const PostCardContainer = styled.div`
   border-radius: 6px;
   background: ${props => props.theme["base-post"]};
 
-  p {
-    max-height: 7rem;
-    display: -webkit-box;
-    overflow: hidden;
-
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-  }
+  border: 4px solid transparent;
 
   header {
     display: flex;
@@ -34,6 +31,21 @@ export const PostCardContainer = styled.div`
       font-size: 0.875rem;
       color: ${props => props.theme["base-span"]}
     }
-  }
 
+  }
+  transition: border 0.3s;
+  
+  &:hover {
+    border: 4px solid ${props => props.theme["base-border"]};
+  }
+`
+
+export const PostCardText = styled(ReactMarkdown)`
+  max-height: 7rem;
+  display: -webkit-box;
+  overflow: hidden;
+  color: ${props => props.theme["base-text"]};
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `

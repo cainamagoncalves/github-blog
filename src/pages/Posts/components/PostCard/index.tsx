@@ -1,21 +1,26 @@
-import { PostCardContainer } from "./style";
+import remarkGfm from "remark-gfm";
+import { PostCardContainer, PostCardText } from "./style";
 
 interface PostCardProps {
   text: string;
+  postTitle: string;
+  postDate: string;
+  postNumber: number;
 }
 
-export function PostCard({ text }: PostCardProps) {
+export function PostCard({ text, postTitle, postDate, postNumber }: PostCardProps) {
+
   return (
-    <PostCardContainer>
+    <PostCardContainer to={`/detail/${postNumber}`}>
       <header>
         <strong>
-          JavaScript data types and data structures
+          {postTitle}
         </strong>
-        <span>Há 1 dia</span>
+        <span>{postDate}</span>
       </header>
-      <p>
+      <PostCardText remarkPlugins={[remarkGfm]}>
         {text}
-      </p>
-    </PostCardContainer>
+      </PostCardText>
+    </PostCardContainer >
   )
 }

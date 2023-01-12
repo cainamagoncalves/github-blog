@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const ProfileContainer = styled.section`
+export const PostViewInfoContainer = styled.section`
   width: 100%;
   max-width: 864px;
   margin: 0 auto;
@@ -11,24 +12,13 @@ export const ProfileContainer = styled.section`
   filter: drop-shadow(0 2px 1.75rem rgba(0, 0, 0, 0.2));
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-
-  @media(max-width: 768px) {
-    flex-direction: column;
-  }
-`
-
-export const ProfileContent = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-
-  display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 
   header {
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,9 +27,18 @@ export const ProfileContent = styled.div`
       display: flex;
       align-items: center;
       gap: 0.5rem;
-
+      
+      color: ${props => props.theme.blue};
       text-decoration: none;
-      color: ${props => props.theme["blue"]}
+    }
+  }
+
+  main {
+    margin-top: 1.25rem;
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: left;
     }
   }
 
@@ -47,23 +46,18 @@ export const ProfileContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 2rem;
 
-    gap: 1.5rem;
-    margin-top: 1rem; 
-  }
-
-  @media (max-width: 768px) {
-    p {
-      text-align: center;
-    }
-
-    footer {
-      flex-direction: column;
-    }
+    margin-top: 0.5rem;
   }
 `
 
-export const ProfileImage = styled.img`
-  max-width: 148px;
-  border-radius: 6px;
+export const CustomRouteButton = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+
+  text-decoration: none;
+  color: ${props => props.theme.blue}
 `
