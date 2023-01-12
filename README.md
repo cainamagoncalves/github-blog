@@ -26,12 +26,12 @@
 
 ##### All posts view and search page
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./src/assets/screenshots/posts-page.png" />
+  <img alt="Imagem da pagina inicial com os posts baseados nas issues do github" title="All posts view and search page" src="./src/assets/screenshots/posts-page.png" />
 </h1>
 
 ##### Post view page
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./src/assets/screenshots/unique-post-page.png" />
+  <img alt="Imagem com informações do post selecionado" title="Post view page" src="./src/assets/screenshots/unique-post-page.png" />
 </h1>
 
 
