@@ -15,7 +15,7 @@
 <p align="center">
  <a href="#About">About</a> • 
  <a href="#Requisites">Requisites</a> •
- <a href="#Running%20the%20project">Running the project</a> • 
+ <a href="#Running-the-project">Running the project</a> • 
  <a href="#Technologies">Technologies</a> • 
  <a href="#Author">Author</a>
 </p>
